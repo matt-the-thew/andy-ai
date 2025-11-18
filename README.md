@@ -134,44 +134,6 @@ Run with coverage:
 python -m pytest tests/ --cov=. --cov-report=html
 ```
 
-## Architecture & Best Practices
-
-### Error Handling
-- **Exponential backoff retries** for transient failures (timeouts, connection errors)
-- **Graceful degradation** with user-friendly error messages
-- **Comprehensive logging** for debugging production issues
-
-### Performance
-- **Response caching** reduces API costs and latency
-- **Async/await** for non-blocking Discord operations
-- **Thread pool executor** for CPU-bound LLM requests
-
-### Scalability
-- **Cogs-based design** allows easy addition of new features
-- **Rate limiting** prevents bot abuse and API rate limits
-- **Configuration management** enables environment-specific settings
-
-### Code Quality
-- **Type hints** throughout for IDE support and safety
-- **Docstrings** on all public functions and classes
-- **Unit tests** for core services and utilities
-- **Modular design** with single responsibility principle
-
-## Improvements Over Original Code
-
-| Original Issue | Solution |
-|---|---|
-| Uninitialized `cleaned` variable | Proper control flow with validation |
-| Message state mutation (race condition) | Each request gets fresh state via LLMService |
-| No error handling | Comprehensive try-catch with retries |
-| Hardcoded config | Centralized Config class |
-| No logging | Structured logging with file rotation |
-| No rate limiting | Rate limiter per-user and per-guild |
-| No caching | In-memory cache with TTL |
-| Monolithic code | Modular architecture with cogs |
-| No tests | Comprehensive unit tests |
-| Poor scalability | Async-first design, proper error recovery |
-
 ## API Reference
 
 ### LLMService
