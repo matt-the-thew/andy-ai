@@ -2,6 +2,8 @@
 
 Production-ready Discord bot that uses OpenAI's GPT-4 to respond to mentions with intelligent, concise answers.
 
+![Discord bot answering messages with LLM capabilities](example_gif/andygif.gif)
+
 ## Features
 
 ✅ **Robust Error Handling**: Automatic retries with exponential backoff for API failures  
